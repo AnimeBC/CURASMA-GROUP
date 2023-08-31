@@ -1,0 +1,17 @@
+.todo{position: relative;}
+/*registro*/
+.registro{z-index: 1;position: absolute;top: 0%;margin-top: 5%;width: 100%;}
+.registro_A{font-size: 1.2rem;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.registro_B{font-size: 1.2rem;margin-left: 5%;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.registro_A:hover{font-size: 1.3rem;text-decoration: none;transition: all 0.1s;color: antiquewhite;}
+.registro_B:hover{font-size: 1.3rem;text-decoration: none;transition: all 0.1s;color: antiquewhite;}
+/*para las imagenes*/
+.imagen_comportamiento{display: grid;grid-template-columns: repeat(auto-fill,33.3%);z-index: 0;}
+.imagenes{width: 100%;}
+.img{width: 150%;height: 250px;transform: rotateZ(-15deg);border-radius: 5%;}
+.img:hover{cursor: pointer;transition: all 0.1s;border: rgb(79, 154, 216) solid 2px;}
+/*extra*/
+.extra_efecto{text-align: center;position: absolute;top: 0;width: 100%;height: 100vh;background-color: rgb(0, 0, 0,0.4);left: 0;z-index: 2;}
+.extra{width: 50vw;height: 50vh;margin-top: 5%;border-radius: 2%;}
+.salir{font-size: 1.4rem;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.salir:hover{font-size: 1.5rem;text-decoration: none;transition: all 0.1s;color: antiquewhite;cursor: pointer;}
