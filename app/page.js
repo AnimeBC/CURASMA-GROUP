@@ -5,6 +5,12 @@ import Targetas from "@/componentes_Inicio/targetas_mebre/targeta";
 import Comunicaciones from "@/componentes_Inicio/Comunicaciones/Comunicaciones";
 export default function Home() {
   const targetas=["uno.png","dos.png","tres.png","cuatro.png","cinco.png","seis.png"]
+  const targetasA=[{"url":"http://localhost:3000/#aun%20nada","imagen":"/dos.png","informacion":"Este registro te ayudara a mejorar la calidad de la conexiones"
+  ,"enlace_nombre":"Saber Más","titulo":"Ayuda al cliente"},
+  {"url":"http://localhost:3000/#aun%20nada","imagen":"/uno.png","informacion":"Este registro te ayudara a mejorar la calidad de la conexiones"
+  ,"enlace_nombre":"ver","titulo":"Ayuda al cliente"},
+  {"url":"http://localhost:3000/#aun%20nada","imagen":"/uno.png","informacion":"Este registro te ayudara a mejorar la calidad de la conexiones"
+  ,"enlace_nombre":"Saber Más","titulo":"Ayuda al cliente"}]
   return (
     <>
       <div className={estilos.todo}>
@@ -77,7 +83,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Comunicaciones></Comunicaciones>
+      <Comunicaciones targetas={targetasA}></Comunicaciones>
     </>
   );
 }

@@ -10,6 +10,7 @@
         .img:hover{transform:scale(1.1);cursor: zoom-in;transition: all 0.2s;}
     /*nombre de la empresa*/
         .titulos{font-family:Verdana, Geneva, Tahoma, sans-serif}
+        .titulos{color: white;}
         .titulos h2{font-weight: 200;
             margin-top: 0%;
             text-transform: uppercase;

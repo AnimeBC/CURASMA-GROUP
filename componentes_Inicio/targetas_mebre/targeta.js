@@ -31,7 +31,10 @@ export default function Targetas({ targetas }) {
               <div className={estilos.imagenes} key={b}>
                 <img
                   src={`/${a}`}
-                  onClick={()=>{Fmostrar_imagen(true);Fposicion_imagen(`${a}`)}}
+                  onClick={()=>{Fmostrar_imagen(true);Fposicion_imagen(`${a}`);      window.scrollTo({
+                    top: Number(Math.floor(0)),
+                    behavior: 'smooth',
+                  });}}
                   alt="logo de la empresa"
                   priority="true"
                   className={estilos.img}
@@ -40,10 +43,10 @@ export default function Targetas({ targetas }) {
             ))}
           </div>
           <div className={estilos.registro}>
-            <Link href="/#aun nada" className={estilos.registro_A}>
+            <Link href="/registro/login" className={estilos.registro_A}>
               Registrarme
             </Link>
-            <Link href="/#aun nada" className={estilos.registro_B}>
+            <Link href="/registro/signup" className={estilos.registro_B}>
               Iniciar sesion
             </Link>
           </div>
