@@ -3,7 +3,8 @@ import estilos from "./page.module.css";
 import Link from "next/link";
 import Targetas from "@/componentes_Inicio/targetas_mebre/targeta";
 import Comunicaciones from "@/componentes_Inicio/Comunicaciones/Comunicaciones";
-export default function Home() {
+import {Arriba_inicio} from "@/layout_arriba_inicio/Arriba_inicio";
+export default function Home({}) {
   const targetas=["uno.png","dos.png","tres.png","cuatro.png","cinco.png","seis.png"]
   const targetasA=[{"url":"http://localhost:3000/#aun%20nada","imagen":"/dos.png","informacion":"Este registro te ayudara a mejorar la calidad de la conexiones"
   ,"enlace_nombre":"Saber Más","titulo":"Ayuda al cliente"},
@@ -13,6 +14,7 @@ export default function Home() {
   ,"enlace_nombre":"Saber Más","titulo":"Ayuda al cliente"}]
   return (
     <>
+    <Arriba_inicio></Arriba_inicio>
       <div className={estilos.todo}>
         <div className={estilos.todoA}>
           <div className={estilos.logo}>

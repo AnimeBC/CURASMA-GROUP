@@ -44,16 +44,16 @@ export default function Targetas({ targetas }) {
           </div>
           <div className={estilos.registro}>
             <Link href="/registro/login" className={estilos.registro_A}>
-              Registrarme
+              
             </Link>
             <Link href="/registro/signup" className={estilos.registro_B}>
-              Iniciar sesion
+              
             </Link>
           </div>
         </div>
       </div>
     );
   } else {
-    return <div>nada</div>;
+    return <></>;
   }
 }

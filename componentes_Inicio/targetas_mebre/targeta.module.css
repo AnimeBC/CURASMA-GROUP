@@ -1,10 +1,10 @@
 .todo{position: relative;}
 /*registro*/
 .registro{z-index: 1;position: absolute;top: 0%;margin-top: 5%;width: 100%;}
-.registro_A{font-size: 1.2rem;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-.registro_B{font-size: 1.2rem;margin-left: 5%;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-.registro_A:hover{font-size: 1.3rem;text-decoration: none;transition: all 0.1s;color: antiquewhite;}
-.registro_B:hover{font-size: 1.3rem;text-decoration: none;transition: all 0.1s;color: antiquewhite;}
+.registro_A{transition: all 0.3s;font-size: 1.2rem;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.registro_B{transition: all 0.3s;font-size: 1.2rem;margin-left: 5%;list-style:none;text-decoration: underline;color: white;font-weight: 600;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.registro_A:hover{text-decoration: none;color: #6bebfc;font-size: 1.3rem;}
+.registro_B:hover{text-decoration: none;color: #6bebfc;font-size: 1.3rem;}
 /*para las imagenes*/
 .imagen_comportamiento{display: grid;grid-template-columns: repeat(auto-fill,33.3%);z-index: 0;}
 .imagenes{width: 100%;}

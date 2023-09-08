@@ -4,7 +4,7 @@
 .todoA{width: 50%;margin-left: 5%;}
 .todoB{width: 50%;margin-right: 5%;}
     /*logo de la empresa*/
-        .logo{margin:5%0%10%0%;display: flex;justify-content: left;overflow: hidden;width: 360px;
+        .logo{display: flex;justify-content: left;overflow: hidden;width: 360px;
             border-radius: 5%;}
         .img{width: 100%;height: 250px;}
         .img:hover{transform:scale(1.1);cursor: zoom-in;transition: all 0.2s;}
