@@ -1,6 +1,6 @@
 "use client";
 import estilos from "./targeta.module.css";
-import Image from "next/image";
+import Image from "react-cool-img";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 export default function Targetas({ targetas }) {
@@ -29,14 +29,14 @@ export default function Targetas({ targetas }) {
           <div className={estilos.imagen_comportamiento}>
             {targetas.map((a, b) => (
               <div className={estilos.imagenes} key={b}>
-                <img
+                <Image
                   src={`/${a}`}
                   onClick={()=>{Fmostrar_imagen(true);Fposicion_imagen(`${a}`);      window.scrollTo({
                     top: Number(Math.floor(0)),
                     behavior: 'smooth',
                   });}}
                   alt="logo de la empresa"
-                  priority="true"
+                  placeHolder={`/${a}`}
                   className={estilos.img}
                 />
               </div>

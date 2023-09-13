@@ -33,10 +33,12 @@ export function Arriba_inicio() {
       <header className={estilos.header} id="cabezera_A">
         <div className={estilos.imagen}>
           <Image
-            src="/ejemplo.png"
+            src={"/ejemplo.png"}
             width={450}
             className={estilos.img}
             height={250}
+            placeholder="blur"
+            blurDataURL={"/ejemplo.png"}
           ></Image>
         </div>
         <nav className={estilos.contenido}>

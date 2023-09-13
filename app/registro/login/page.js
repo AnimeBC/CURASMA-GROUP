@@ -1,6 +1,6 @@
 import estilos from "./login.module.css";
-import Imagenes_Registro from "@/Componentes_Registro/Imagenes_Animacion/Imagenes_Registro";
-import Formulario from "@/Componentes_Registro/Formulario/Formulario";
+import Imagenes_Registro from "../_Componentes_Registro/Imagenes_Animacion/Imagenes_Registro";
+import Formulario from "../_Componentes_Registro/Formulario/Formulario";
 export default function login() {
   return (
     <div className={estilos.todo}>
