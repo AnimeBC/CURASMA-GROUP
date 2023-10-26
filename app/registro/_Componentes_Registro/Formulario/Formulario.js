@@ -1,33 +1,43 @@
 "use client";
 import estilos from "./formulario.module.css";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-export default function Formulario() {
+import Error from "../../_Error/Error";
+export default function Formulario({correos,numeros}) {
   /** para prefijo de numeros */
   const [prefijo,Fprefijo]=useState("+51")
   const [imagen,Fimagen]=useState("/peru.png")
   const [maxNumero,FmaxNumero]=useState("9")
   const [placeholder,Fplaceholder]=useState("XXX XXX XXX") 
+  const [error,Ferror]=useState(0)
+  const [mesaje_error,Fmensaje_error]=useState("")
   const paises=[{valor:"+51",imagen:"/peru.png",place:"XXX XXX XXX",numMax:9},
   {valor:"+1",imagen:"/eu.png",place:"(XXX) XXX XXXX",numMax:11}]
   //**/ */
   /**para la contraseña */
   const [contraseña,Fcontraseña]=useState({uno:{estado:0},dos:{estado:0}})
+  const [contraseña_texto,Fcontraseña_texto]=useState({uno:{contraseña:""},dos:{contraseña:""}})
   //** */
   /**para los imput tipo radio */
   const [radio,Fradio]=useState({uno:{input:false},dos:{input:false}})
+  /*Formulario Link*/
   useEffect(()=>{
     const filtrado=paises.filter((a)=>a.valor===prefijo)
     Fimagen(filtrado[0].imagen)
     Fplaceholder(filtrado[0].place)
     FmaxNumero(filtrado[0].numMax)
   },[prefijo])
+  function envio(){
+    let error=Number;
+    let datos={};
+    return datos
+  }
   return (
     <>
       <div className={estilos.formulario}>
+        <Error mensaje={""} estado={error}></Error>
         <h1 className={estilos.titulo}>Formulario de Registro</h1>
-        <form action="#" method="POST">
+        <form action={`${process.env.NEXT_PUBLIC_URL}validarRegistro`} method="POST">
           <div className={estilos.formulario_grupo}>
             <label className={estilos.label} htmlFor="nombre">
               Nombre:
@@ -82,7 +92,8 @@ export default function Formulario() {
             <div className={estilos.contraseña}>
               <input
               className={estilos.input}
-              type="password"
+              onKeyUp={(a)=>Fcontraseña_texto({uno:{contraseña:a.target.value},dos:{contraseña:contraseña_texto.dos.contraseña}})}
+              type={contraseña.uno.estado===true?`${"text"}`:`${"password"}`}
               id="contraseña"
               name="contraseña"
               required
@@ -98,8 +109,9 @@ export default function Formulario() {
             </label>
             <div className={estilos.contraseña}>
               <input
+              onKeyUp={(a)=>Fcontraseña_texto({uno:{contraseña:contraseña_texto.uno.contraseña},dos:{contraseña:a.target.value}})}
               className={estilos.input}
-              type="password"
+              type={contraseña.dos.estado===true?`${"text"}`:`${"password"}`}
               id="contraseñaP"
               name="contraseñaP"
               required
@@ -143,8 +155,7 @@ export default function Formulario() {
             Aceptar terminos de uso
           </div>
           <div className={estilos.formulario_grupo}>
-              
-            <button className={estilos.envio}>Enviar</button>
+            <button className={estilos.envio} onClick={envio}>Enviar</button>
           </div>
         </form>
       </div>

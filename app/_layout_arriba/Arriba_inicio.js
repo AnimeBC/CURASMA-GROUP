@@ -48,12 +48,12 @@ export function Arriba_inicio() {
             </Link>
           </div>
           <div className={estilos.contenido_a}>
-            <Link href="/registro/login" className={estilos.a}>
+            <Link href="/registro/registro" className={estilos.a}>
               Registrarme
             </Link>
           </div>
           <div className={estilos.contenido_a}>
-            <Link href="/registro/signup" className={estilos.a}>
+            <Link href="/registro/ingresar" className={estilos.a}>
               Iniciar sesion
             </Link>
           </div>
