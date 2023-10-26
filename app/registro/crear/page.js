@@ -1,12 +1,13 @@
 "use client";
 import estilos from "./crear.module.css"
-import { useState,useRef } from "react"
+import { useState,useRef, useEffect } from "react"
 export default function crear({searchParams}) {
     const prefijo_n=searchParams.prefijo_n
     const email=searchParams.email
     const telefono=searchParams.telefono
     /**estado para el codigo de verificacion*/
     const [codigo,Fcodigo] = useState(false)
+    const FcodigoC=["","","","","",""]
     /*referencias para recopila inputs u otros*/
     function envio(dato,estado){
         Fcodigo(true)
@@ -52,12 +53,12 @@ export default function crear({searchParams}) {
                     :
                     <div>
                         <div className={estilos.CodeA}>
-                            <VerificationInput maxLength={1}/>
-                            <VerificationInput maxLength={1}/>
-                            <VerificationInput maxLength={1}/>
-                            <VerificationInput maxLength={1}/>
-                            <VerificationInput maxLength={1}/>
-                            <VerificationInput maxLength={1}/>
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={0} />
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={1} />
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={2} />
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={3} />
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={4} />
+                            <VerificationInput maxLength={1} FcodigoC={FcodigoC} posicion={5} />
                         </div>
                     </div>}
                 </div>
@@ -66,17 +67,22 @@ export default function crear({searchParams}) {
       );
 }
 
-export function VerificationInput({ maxLength }) {
-  const [value, setValue] = useState('');
+export function VerificationInput({ maxLength,FcodigoC,posicion}) {
+  const [valor, Fvalor] = useState('');
+  if(FcodigoC.filter(a=>a==="").length===0){
+    console.log("aa");
+  }else{
+    console.log("a");
 
+  }
   const adentro = (a) => {
     const inputValue = a.target.value;
-
     /**solo numeros if (/^\d*$/.test(inputValue) && inputValue.length <= maxLength) { */
     if (inputValue.length <= maxLength) {
-        setValue(inputValue);
+        Fvalor(inputValue);
+        FcodigoC.splice(posicion,1,inputValue.toString())
         if (!(/^\d*$/.test(inputValue))){
-            setValue(inputValue.toUpperCase());
+            Fvalor(inputValue.toUpperCase());
         }
       if (inputValue.length === maxLength) {
         const nextInput = a.target.nextSibling;
@@ -86,9 +92,8 @@ export function VerificationInput({ maxLength }) {
       }
     }
   };
-
-  const afuera = (a) => {
-    if (a.key === 'Backspace' && value === '') {
+ const afuera = (a) => {
+    if (a.key === 'Backspace' && valor === '') {
       const prevInput = a.target.previousSibling;
       if (prevInput) {
         prevInput.focus();
@@ -99,7 +104,7 @@ export function VerificationInput({ maxLength }) {
   return (
     <input
       type="text"
-      value={value}
+      value={valor}
       className={estilos.Code_A}
       onChange={adentro}
       onKeyDown={afuera}
