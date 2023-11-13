@@ -1,0 +1,17 @@
+.todo{background-color: rgb(58, 58, 58);padding: 2%;display: flex;}
+/*css del logo*/
+.logo{display: flex;justify-content: left;overflow: hidden;width: 20%;
+    border-radius: 5%;}
+.img{width: 150px;height: 75px;}
+.img:hover{transform:scale(1.1);cursor: zoom-in;transition: all 0.2s;}
+/*css del contenido extra*/
+.opciones{width: 60%;display: flex;align-items:center;justify-content: center;}
+.caja_opcion{padding: 1%;}
+.caja_opcion ion-icon{font-size: 1.2rem;display: flex;align-items: center;color: rgb(250, 255, 255);}
+.caja_opcion ion-icon:hover{cursor: pointer;transition: all 0.1s;color:rgb(95, 95, 95);}
+/*css de cerra sesion*/
+.cerrar_sesion{display: flex;width: 20%;justify-content: flex-end;align-items: center;color: rgb(241, 170, 170);font-weight: 500;}
+.cerrar_sesionL{padding: 1%;}
+.cerrar_sesionL ion-icon{font-size: 1.2rem;display: flex;align-items: center;}
+.cerrar_sesionL:hover{cursor: pointer;transition: all 0.1s;color:rgb(240, 88, 88);}
+.cerrar_sesionT:hover{cursor: pointer;transition: all 0.1s;color:rgb(240, 88, 88);}
